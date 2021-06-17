@@ -22,7 +22,7 @@ int main() {
     cout << r << '\n';
     string line;
     ifstream boards;
-    boards.open("formattedPuzzles.txt");
+    boards.open("./data/formattedPuzzles.txt");
     for (int i = 0; i <= r; i++) {
         getline(boards, line);
     }

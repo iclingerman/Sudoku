@@ -9,4 +9,5 @@ Example Puzzles downloaded form:
     https://projecteuler.net/index.php?section=problems&id=96  
     https://www.sudokuwiki.org/
 
-NOTE: Currently, there needs to be a /bin/ folder located in the same directory as the Makefile in order to compile using the Makefile. 
+
+The graphics for this program were created using the SFML library. (https://www.sfml-dev.org/)

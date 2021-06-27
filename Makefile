@@ -1,16 +1,22 @@
 # Ian Clingerman 
 # Makefile for Sudoku Solver Program
 
-OBJS = src/Driver.cpp src/Board.cpp
+# OBJS = src/Driver.cpp src/Board.cpp
+OBJS = src/main.cpp
 CC = g++
 OUTFILE = bin/SudokuSolver
-FILE = out
+
+INCLUDE_PATHS = -ISFML/include
+LINKER_PATHS = -LSFML/lib
+LINKER_FLAGS = -lsfml-graphics -lsfml-window -lsfml-system
+
+
 
 all: $(OBJS)
-	$(CC) $(OBJS) -o $(OUTFILE)
+	$(CC) $(OBJS) $(INCLUDE_PATHS) $(LINKER_PATHS) $(LINKER_FLAGS) -o $(OUTFILE)
 
 run: 
 	./$(OUTFILE)
 
 clean:
-	rm bin/*
+	rm bin/*.exe

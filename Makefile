@@ -2,7 +2,7 @@
 # Makefile for Sudoku Solver Program
 
 # OBJS = src/Driver.cpp src/Board.cpp
-OBJS = src/main.cpp
+OBJS = src/main.cpp src/Board.cpp
 CC = g++
 OUTFILE = bin/SudokuSolver
 

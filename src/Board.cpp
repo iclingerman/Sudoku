@@ -8,6 +8,8 @@
 
 #include <string>
 #include <iostream>
+#include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
 #include "Board.h"
 
 using namespace std;
@@ -20,6 +22,11 @@ Board::Board() {
     for (int i = 0; i < 9; i++) {
         for (int j = 0; j < 9; j++) {
             this->board[i][j] = "123456789";
+            this->boardGUI[i][j] = sf::RectangleShape(sf::Vector2f(50.f, 50.f));
+            this->boardGUI[i][j].setOutlineColor(sf::Color::Black);
+            this->boardGUI[i][j].setOutlineThickness(3.0);
+            this->boardGUI[i][j].setFillColor(sf::Color::White);
+            this->boardGUI[i][j].setPosition(sf::Vector2f(i*50.f+50, j*50.f+90));
         }
     }
 }
@@ -38,9 +45,24 @@ Board::Board(string input) {
             } else {
                 this->board[i][j] = to_string(a);
             }
+            this->boardGUI[i][j] = sf::RectangleShape(sf::Vector2f(50.f, 50.f));
+            this->boardGUI[i][j].setOutlineColor(sf::Color::Black);
+            this->boardGUI[i][j].setOutlineThickness(3.0);
+            this->boardGUI[i][j].setFillColor(sf::Color::White);
+            this->boardGUI[i][j].setPosition(sf::Vector2f(i*50.f+50, j*50.f+90));
         }
     }
 }
+
+
+// void draw(sf::RenderTarget& target, sf::RenderStates states) {
+//     for (int i = 0; i < 9; i++) {
+//         for (int j = 0; j < 9; j++) {
+//             target.draw(this->boardGUI[i][j]);
+//         }
+//     }
+// }
+
 
 /**
  * @brief Creates and returns a copy the board class
